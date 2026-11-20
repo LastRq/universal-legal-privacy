@@ -19,7 +19,7 @@ import tempfile
 import uuid
 
 NAME = "universal-legal-privacy"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 512_000
 MAX_RESULTS = 3000
@@ -482,11 +482,18 @@ def command_verify(args):
         contents = manifest.read_text(encoding="utf-8")
         if not contents.startswith("---\n") or f"name: {NAME}" not in contents or "description:" not in contents:
             failures.append("Missing required Agent Skills frontmatter")
-    required = ["COPYRIGHT.md", "references/workflows/permissions.md", "references/legal-research/source-policy.md",
+    required = ["LICENSE", "COPYRIGHT.md", "references/workflows/permissions.md", "references/legal-research/source-policy.md",
                 "references/consent/implementation.md", "scripts/ulp.py"]
     for p in required:
         if not (root / p).is_file():
             failures.append(f"Missing required resource: {p}")
+    license_path = root / "LICENSE"
+    if license_path.is_file():
+        license_text = license_path.read_text(encoding="utf-8")
+        if "Apache License" not in license_text or "Version 2.0, January 2004" not in license_text or "END OF TERMS AND CONDITIONS" not in license_text:
+            failures.append("LICENSE file does not appear to contain the full Apache License 2.0")
+    if manifest.is_file() and "license: Apache-2.0" not in manifest.read_text(encoding="utf-8"):
+        failures.append("SKILL.md metadata does not declare Apache-2.0")
     json_print({"package": str(root), "status": "pass" if not failures else "fail", "failures": failures,
                 "note": "Package structure check only; does not execute Antigravity, Claude or Codex."})
     if failures:

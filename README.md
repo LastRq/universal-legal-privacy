@@ -4,9 +4,9 @@
 
 **Español:** Analiza un proyecto real, descubre posibles tratamientos de datos, investiga las obligaciones aplicables en **fuentes oficiales**, pregunta por información empresarial faltante y prepara documentos y cambios de privacidad para revisión y autorización humana. No inventa hechos, no ofrece una certificación legal y no publica automáticamente.
 
-> **Status:** v1.0.0 — portable skill and local safety utilities. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
+> **Status:** v1.0.1 — portable skill and local safety utilities. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
 >
-> **License:** Publicly readable source, **proprietary / all rights reserved**. See [COPYRIGHT.md](COPYRIGHT.md). Repository visibility is not a grant of a general reuse license.
+> **License:** [Apache License 2.0](LICENSE). Copyright © 2026 LastRq. You may use, modify and redistribute this skill, including commercially, subject to the license terms. See [COPYRIGHT.md](COPYRIGHT.md).
 
 ## Capabilities
 

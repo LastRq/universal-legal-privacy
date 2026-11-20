@@ -54,6 +54,14 @@ class LocalCLITests(unittest.TestCase):
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertIn('"pass"',r.stdout)
 
+    def test_apache_license_metadata_and_full_text(self):
+        license_text=(ROOT/'LICENSE').read_text(encoding='utf-8')
+        skill=(ROOT/'SKILL.md').read_text(encoding='utf-8')
+        self.assertIn('Apache License',license_text)
+        self.assertIn('Version 2.0, January 2004',license_text)
+        self.assertIn('END OF TERMS AND CONDITIONS',license_text)
+        self.assertIn('license: Apache-2.0',skill)
+
     def test_scan_only_candidates_and_redacts_values(self):
         (self.project/'app.ts').write_text("const email = 'person@real.example';\nlocalStorage.setItem('secret', 'private-value');\n")
         (self.project/'.env').write_text('SENSITIVE_TOKEN=never-display')
@@ -126,6 +134,7 @@ class LocalCLITests(unittest.TestCase):
             self.assertEqual(a.returncode,0,a.stderr)
             dest=project/rel/'universal-legal-privacy'
             self.assertTrue((dest/'SKILL.md').exists())
+            self.assertTrue((dest/'LICENSE').exists())
             self.assertTrue((dest/'scripts/ulp.py').exists())
             b=self.run_cli('install','--agent',agent,'--scope','project','--project',project,'--approve-install')
             self.assertNotEqual(b.returncode,0)

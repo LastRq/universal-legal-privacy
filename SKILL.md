@@ -1,11 +1,11 @@
 ---
 name: universal-legal-privacy
 description: Audit real software projects for personal-data flows, legal/privacy documentation, cookies and consent, sector-specific requirements, and evidence-backed implementation. Use for privacy policies, terms of service, cookie banners, compliance reviews, cross-border data questions, or release readiness. Never invent legal or business facts and never publish without human approval.
-license: Proprietary — all rights reserved. See COPYRIGHT.md.
+license: Apache-2.0
 compatibility: Requires project filesystem access; optional Python 3.10+, browser/web research, test runner and approved write permissions.
 metadata:
   author: LastRq
-  version: 1.0.0-beta.1
+  version: 1.0.1
 ---
 
 # Universal Legal & Privacy
