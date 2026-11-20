@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "owner_attestation": {"confirmed": false, "confirmed_on": "", "role": ""},
+  "entity": {"legal_name": "", "country": "", "privacy_contact": "", "role": ""},
+  "project": {
+    "name": "", "description": "", "business_model": "", "audience": "",
+    "languages": [], "service_countries": []
+  },
+  "processing": [],
+  "vendors": [],
+  "cookies": [],
+  "terms": {"service_scope": "", "eligibility": "", "user_obligations": "", "termination": "", "payment_terms": ""},
+  "legal_sources": [],
+  "review": {"specialist_required": false, "specialist_review_confirmed": false}
+}

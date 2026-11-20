@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Non-production consent demonstration</title>
+<style>
+body {font: 1rem/1.5 system-ui,sans-serif; max-width: 48rem; margin: 2rem auto; padding: 1rem;}
+#preferences {border:1px solid #888; border-radius:.75rem; padding:1rem;}
+button {font:inherit; border:1px solid currentColor; border-radius:.4rem; padding:.6rem 1rem; margin:.25rem; cursor:pointer;}
+fieldset {border:0; border-top:1px solid #aaa; padding:.8rem 0;}
+fieldset label {display:block; padding:.4rem 0;}
+:focus-visible {outline:3px solid #005fcc;outline-offset:3px;}
+</style>
+</head>
+<body>
+<h1>Consent preferences — demonstration only</h1>
+<p>This example does not install trackers. It is not a production consent manager or legal compliance guarantee.</p>
+<p id="status" role="status" aria-live="polite">No optional services started.</p>
+<button id="open" type="button">Privacy preferences</button>
+<section id="preferences" aria-labelledby="preference-title" hidden>
+  <h2 id="preference-title">Choose optional categories</h2>
+  <p>Essential site functionality remains available. Optional categories start disabled until you choose.</p>
+  <fieldset><legend>Categories</legend>
+    <label><input type="checkbox" checked disabled> Essential — always on</label>
+    <label><input id="analytics" type="checkbox"> Analytics — optional</label>
+    <label><input id="marketing" type="checkbox"> Advertising — optional</label>
+  </fieldset>
+  <button id="reject" type="button">Reject optional</button>
+  <button id="save" type="button">Save preferences</button>
+  <button id="accept" type="button">Accept optional</button>
+</section>
+<script type="module">
+import {ConsentGate} from './consent-gate.js';
+const gate = new ConsentGate({key:'ulp-demo-consent', version:'demo-v1'});
+const panel=document.getElementById('preferences');
+const status=document.getElementById('status');
+const analytics=document.getElementById('analytics');
+const marketing=document.getElementById('marketing');
+function paint(){ const {choices,answered}=gate.snapshot(); analytics.checked=choices.analytics; marketing.checked=choices.marketing; panel.hidden=answered; status.textContent=answered?'Demo choices stored; no optional SDK configured.':'Awaiting optional consent. No optional SDK started.'; }
+function apply(choices){ gate.setChoices(choices); paint(); }
+document.getElementById('open').addEventListener('click',()=>{panel.hidden=false; analytics.focus();});
+document.getElementById('reject').addEventListener('click',()=>apply({analytics:false,marketing:false}));
+document.getElementById('accept').addEventListener('click',()=>apply({analytics:true,marketing:true}));
+document.getElementById('save').addEventListener('click',()=>apply({analytics:analytics.checked,marketing:marketing.checked}));
+paint();
+</script>
+</body>
+</html>
