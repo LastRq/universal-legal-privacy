@@ -4,7 +4,7 @@
 
 **Español:** Analiza un proyecto real, descubre posibles tratamientos de datos, investiga las obligaciones aplicables en **fuentes oficiales**, pregunta por información empresarial faltante y prepara documentos y cambios de privacidad para revisión y autorización humana. No inventa hechos, no ofrece una certificación legal y no publica automáticamente.
 
-> **Status:** v1.0.1 — portable skill and local safety utilities. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
+> **Status:** v1.1.0 — modular audit framework and local safety utilities. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
 >
 > **License:** [Apache License 2.0](LICENSE). Copyright © 2026 LastRq. You may use, modify and redistribute this skill, including commercially, subject to the license terms. See [COPYRIGHT.md](COPYRIGHT.md).
 
@@ -17,6 +17,17 @@
 - Consent rules: no chatbot; assess whether a banner is needed, block optional technologies before permission where required, test withdrawal/rejection and accessibility.
 - Read-only by default; non-public workfiles can be preauthorized, but code changes, publishing and Git actions always require separate approval.
 - No external dependencies for the bundled Python 3.10+ CLI.
+
+## Modular audit framework
+
+The [catalog](references/modular/catalog.json) includes 40 sectors, 24 business models and 35 capabilities (99 investigation modules). Each has activation criteria, investigation topics, candidate technical controls and specialist-review triggers. The [workflow](references/modular/workflow.md) explains multi-module composition, per-operator scope and jurisdiction research.
+
+```bash
+python scripts/module_plan.py --list
+python scripts/module_plan.py --sectors healthcare --models saas multitenant --capabilities sensitive-data authentication --jurisdiction EC
+```
+
+The offline planner validates explicit module IDs, separates uncertain candidates, and outputs a research plan without modifying the project. Selection is not automatic detection or a determination of law. Official legal verification, technical testing and explicit approvals remain required.
 
 ## Installation (Python 3.10+)
 
