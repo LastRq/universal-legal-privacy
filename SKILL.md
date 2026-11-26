@@ -1,11 +1,11 @@
 ---
 name: universal-legal-privacy
-description: Audit real software projects for personal-data flows, legal/privacy documentation, cookies and consent, sector-specific requirements, and evidence-backed implementation. Use for privacy policies, terms of service, cookie banners, compliance reviews, cross-border data questions, or release readiness. Never invent legal or business facts and never publish without human approval.
+description: Audit existing websites, desktop/mobile apps, games, APIs, libraries, CLI, AI, IoT and other software across all sectors. Inspect real architecture, data flows, security and legal documentation; plan evidence-backed privacy, terms, EULA, consent and compliance changes. Never invent facts or publish without human approval.
 license: Apache-2.0
 compatibility: Requires project filesystem access; optional Python 3.10+, browser/web research, test runner and approved write permissions.
 metadata:
   author: LastRq
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Universal Legal & Privacy
@@ -29,8 +29,12 @@ You are a legal/privacy engineering workflow, not a lawyer, law firm, or certify
 3. **Official legal research:** research laws and authority guidance per jurisdiction/sector; record URL, official issuer, relevant section, date verified, applicability and ambiguity. Source quality rules: [legal-research/source-policy.md](references/legal-research/source-policy.md). Multiple jurisdictions may conflict; do not assume strictest rule always resolves conflicts.
 4. **Gap analysis and approval plan:** compare real behavior with duties; make a risk register with file/line evidence, severity and unknowns. Propose docs/UI/backend/security changes separately. Ask the owner to resolve blockers and authorize a bounded implementation plan. Read [workflows/permissions.md](references/workflows/permissions.md).
 5. **Draft offline, only after confirmed essential facts and permission:** create drafts from verified facts and official-source references, tailored to specific service and markets; mark DRAFT / NOT FOR PUBLICATION until approved. `python scripts/ulp.py validate-profile --profile FILE`; `python scripts/ulp.py draft --project PATH --profile FILE --types privacy,terms,cookies --approve-workfiles`. If a document cannot be grounded, stop that document and request details. See [workflows/documents.md](references/workflows/documents.md).
-6. **Integrate only after separate approval:** reuse existing pages, routes, design system, i18n, navigation, components; do not duplicate valid privacy controls. Consent panel is a banner/settings UI, **not a chatbot**. Prevent optional tracking before consent when jurisdiction requires it; respect denial/revocation; test actual loading behavior. Reference [consent/implementation.md](references/consent/implementation.md).
+6. **Integrate only after separate approval:** reuse existing platform-appropriate legal screens, installer/store disclosures, docs, pages, routes, design system, i18n, navigation, components; do not duplicate valid privacy controls. Consent panel is a banner/settings UI, **not a chatbot**. Prevent optional tracking before consent when jurisdiction requires it; respect denial/revocation; test actual loading behavior. Reference [consent/implementation.md](references/consent/implementation.md).
 7. **Verify and report:** run applicable build/lint/unit/E2E/accessibility/i18n/tracker/withdrawal tests; report exact commands and results or why tests couldn't run. Compare new vs prior runs; preserve human edits and history. Read [verification/checklist.md](references/verification/checklist.md).
+
+## Universal project audit (all platforms and niches)
+
+For every project audit, read [Universal project audit](references/workflows/universal-project-audit.md) before selecting modules. Start from the authorized source root, not just its website. Identify every product, platform, build variant and distribution surface; inspect code, manifests, dependency licenses, permissions, data lifecycle, native integrations and network paths. Use `python -B scripts/project_audit.py --project PATH` for bounded read-only candidate triage; manually verify signals and safely inspect relevant excluded source/manifests when needed. Never read actual vaults, secret material or production records. Use synthetic fixtures for authorized tests. Analyze unfamiliar platforms or sectors using the same evidence workflow rather than refusing. Choose appropriate delivery surfaces (legal screen, installer, store, API docs, website); never add a cookie banner simply because software exists. For password managers, API key, wallet and authenticator vaults, use the [credential vault example](references/workflows/credential-vault-example.md) and its detailed checks in the universal workflow. Distinguish local-only content from developer/vendor-accessible data. No unverified security or legal claims.
 
 ## Modular framework (99 audit modules)
 
