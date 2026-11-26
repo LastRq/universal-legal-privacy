@@ -19,7 +19,7 @@ import tempfile
 import uuid
 
 NAME = "universal-legal-privacy"
-VERSION = "1.0.1"
+VERSION = "1.1.0"
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 512_000
 MAX_RESULTS = 3000
@@ -483,7 +483,8 @@ def command_verify(args):
         if not contents.startswith("---\n") or f"name: {NAME}" not in contents or "description:" not in contents:
             failures.append("Missing required Agent Skills frontmatter")
     required = ["LICENSE", "COPYRIGHT.md", "references/workflows/permissions.md", "references/legal-research/source-policy.md",
-                "references/consent/implementation.md", "scripts/ulp.py"]
+                "references/consent/implementation.md", "scripts/ulp.py",
+                "references/modular/catalog.json", "references/modular/workflow.md", "scripts/module_plan.py"]
     for p in required:
         if not (root / p).is_file():
             failures.append(f"Missing required resource: {p}")

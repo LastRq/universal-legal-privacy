@@ -5,7 +5,7 @@ license: Apache-2.0
 compatibility: Requires project filesystem access; optional Python 3.10+, browser/web research, test runner and approved write permissions.
 metadata:
   author: LastRq
-  version: 1.0.1
+  version: 1.1.0
 ---
 
 # Universal Legal & Privacy
@@ -31,6 +31,10 @@ You are a legal/privacy engineering workflow, not a lawyer, law firm, or certify
 5. **Draft offline, only after confirmed essential facts and permission:** create drafts from verified facts and official-source references, tailored to specific service and markets; mark DRAFT / NOT FOR PUBLICATION until approved. `python scripts/ulp.py validate-profile --profile FILE`; `python scripts/ulp.py draft --project PATH --profile FILE --types privacy,terms,cookies --approve-workfiles`. If a document cannot be grounded, stop that document and request details. See [workflows/documents.md](references/workflows/documents.md).
 6. **Integrate only after separate approval:** reuse existing pages, routes, design system, i18n, navigation, components; do not duplicate valid privacy controls. Consent panel is a banner/settings UI, **not a chatbot**. Prevent optional tracking before consent when jurisdiction requires it; respect denial/revocation; test actual loading behavior. Reference [consent/implementation.md](references/consent/implementation.md).
 7. **Verify and report:** run applicable build/lint/unit/E2E/accessibility/i18n/tracker/withdrawal tests; report exact commands and results or why tests couldn't run. Compare new vs prior runs; preserve human edits and history. Read [verification/checklist.md](references/verification/checklist.md).
+
+## Modular framework (99 audit modules)
+
+During stages 0–2, read [modular workflow](references/modular/workflow.md) and the [catalog](references/modular/catalog.json). Select all evidenced sector (40), business model (24) and cross-cutting capability (35) modules per app and legal operator; distinguish confirmed scope from candidates. Use the optional read-only helper `python scripts/module_plan.py --list` or pass explicit module IDs after reviewing evidence. Never infer obligations, actual data collection or jurisdiction from module labels. During stages 3–7, research the applicable official sources, compose requirements without losing entity/jurisdiction provenance, resolve conflicts and unknowns, map verified requirements to drafts, controls and tests, and retain all existing approval gates. A module is an investigation checklist, not a legal opinion. No automatic publication.
 
 ## Mandatory evidence discipline
 

@@ -1,0 +1,705 @@
+{
+  "version": "1.1.0",
+  "status": "research-and-audit-guidance-not-law",
+  "modules": {
+    "sectors": [
+      {
+        "id": "healthcare",
+        "activation": "Clinical, dental, pharmacy or telehealth service",
+        "investigate": "Patient/guardian roles; clinical records; provider credentials",
+        "controls": "Clinical access segregation; appointment confidentiality; emergency limitations",
+        "review": "Clinical processing or medical claims"
+      },
+      {
+        "id": "finance",
+        "activation": "Banking, lending, investment or insurance",
+        "investigate": "Regulated activity; intermediary role; eligibility decisions",
+        "controls": "Clear fee/risk disclosure; restricted financial records; decision appeal",
+        "review": "Licensing, credit, investment or insurance advice"
+      },
+      {
+        "id": "legal",
+        "activation": "Legal advice or notarial services",
+        "investigate": "Professional privilege; engagement scope; client documents",
+        "controls": "Matter access; conflict intake; avoid unsupported guarantees",
+        "review": "Legal advice, privilege or professional regulation"
+      },
+      {
+        "id": "ecommerce",
+        "activation": "Sale of goods or digital products",
+        "investigate": "Merchant; price/tax; delivery; refund eligibility",
+        "controls": "Checkout totals; order confirmation; return workflow",
+        "review": "Restricted goods or cross-border consumer disputes"
+      },
+      {
+        "id": "education",
+        "activation": "School, academy or course delivery",
+        "investigate": "Student/guardian roles; assessment; accreditation",
+        "controls": "Role-based grades; age-appropriate settings; certificate accuracy",
+        "review": "Children or educational records"
+      },
+      {
+        "id": "real-estate",
+        "activation": "Property sales, rentals or management",
+        "investigate": "Owner/agent roles; listing accuracy; applicant screening",
+        "controls": "Listing correction; lead controls; fair screening review",
+        "review": "Housing discrimination or brokerage licensing"
+      },
+      {
+        "id": "agriculture",
+        "activation": "Farming, livestock or agricultural services",
+        "investigate": "Farm ownership; land/location data; traceability; inputs",
+        "controls": "Protect farm coordinates; product provenance; safety notices",
+        "review": "Food safety, pesticides or veterinary claims"
+      },
+      {
+        "id": "gastronomy",
+        "activation": "Restaurant, food orders or menu service",
+        "investigate": "Food operator; allergens; availability; delivery partner",
+        "controls": "Accurate menu/allergen information; order cancellation; hygiene claims",
+        "review": "Food safety or allergen claims"
+      },
+      {
+        "id": "tourism",
+        "activation": "Accommodation, travel or reservations",
+        "investigate": "Operator vs agent; booking terms; guest identification",
+        "controls": "Full booking price; cancellation and accessibility details",
+        "review": "Travel packages, guest reporting or licensing"
+      },
+      {
+        "id": "technology",
+        "activation": "Software development or technology services",
+        "investigate": "Deliverables; service levels; code ownership; support",
+        "controls": "Versioned scope; dependency inventory; support terms",
+        "review": "Export restrictions or critical services"
+      },
+      {
+        "id": "human-resources",
+        "activation": "Recruitment, payroll or workforce systems",
+        "investigate": "Employer/agency role; candidate data; screening criteria",
+        "controls": "Restricted CV access; retention; human review",
+        "review": "Employment decisions or employee surveillance"
+      },
+      {
+        "id": "transport-logistics",
+        "activation": "Transport, courier or fleet services",
+        "investigate": "Carrier vs broker; tracking; liability; delivery proof",
+        "controls": "Limit location visibility; proof-of-delivery access; incident process",
+        "review": "Transport licensing or worker tracking"
+      },
+      {
+        "id": "marketing",
+        "activation": "Advertising, agency or campaign services",
+        "investigate": "Advertiser roles; targeting; lead source; endorsements",
+        "controls": "Opt-out propagation; claim substantiation; ad labels",
+        "review": "Sensitive targeting or misleading claims"
+      },
+      {
+        "id": "cybersecurity",
+        "activation": "Security tooling, testing or credential protection",
+        "investigate": "Testing authorization; scan data; vulnerability disclosure",
+        "controls": "Redacted findings; scoped scans; key custody",
+        "review": "Intrusive testing or critical infrastructure"
+      },
+      {
+        "id": "digital-identity",
+        "activation": "Identity verification, credentials or authentication",
+        "investigate": "Assurance level; verifier role; identity evidence",
+        "controls": "Minimize ID retention; recovery; revocation",
+        "review": "Biometric/KYC or consequential verification"
+      },
+      {
+        "id": "social-media",
+        "activation": "Social network, forums or messaging",
+        "investigate": "Audience; visibility; moderation; reports",
+        "controls": "Privacy defaults; blocking; reporting and appeal",
+        "review": "Children or harmful-content handling"
+      },
+      {
+        "id": "gaming",
+        "activation": "Games, virtual worlds or online multiplayer",
+        "investigate": "Age; monetization; virtual items; community rules",
+        "controls": "Parental settings where applicable; purchase clarity; moderation",
+        "review": "Minors, gambling-like mechanics or consumer disputes"
+      },
+      {
+        "id": "entertainment",
+        "activation": "Streaming, music or media delivery",
+        "investigate": "Territorial rights; licenses; viewing history",
+        "controls": "Rights windows; content restrictions; profile controls",
+        "review": "Copyright or age-restricted media"
+      },
+      {
+        "id": "wholesale",
+        "activation": "Distribution, import or export",
+        "investigate": "Trader roles; incoterms if agreed; product origin",
+        "controls": "Quote and order records; shipment terms; product restrictions",
+        "review": "Customs, sanctions or regulated products"
+      },
+      {
+        "id": "construction",
+        "activation": "Building, architecture or engineering",
+        "investigate": "Professional responsibility; project scope; permits",
+        "controls": "Versioned plans; approved changes; safety documentation",
+        "review": "Engineering certification or construction safety"
+      },
+      {
+        "id": "manufacturing",
+        "activation": "Factory or industrial production",
+        "investigate": "Product specs; quality; worker data; supply chain",
+        "controls": "Traceability; defect reports; restricted plant records",
+        "review": "Product safety or industrial monitoring"
+      },
+      {
+        "id": "automotive",
+        "activation": "Vehicle sales, rental or servicing",
+        "investigate": "Vehicle history; warranties; driver eligibility",
+        "controls": "Accurate listings; service records; transparent damage terms",
+        "review": "Vehicle safety or financing"
+      },
+      {
+        "id": "beauty",
+        "activation": "Salon, cosmetic or aesthetic services",
+        "investigate": "Service claims; allergy information; appointment records",
+        "controls": "Consent for photos; accurate treatment scope; cancellation",
+        "review": "Invasive treatment or medical claims"
+      },
+      {
+        "id": "fitness",
+        "activation": "Gym, coaching or wellness services",
+        "investigate": "Health metrics; membership; performance claims",
+        "controls": "Limit health visibility; cancel membership; safety notices",
+        "review": "Health advice or children"
+      },
+      {
+        "id": "veterinary",
+        "activation": "Animal healthcare or pet services",
+        "investigate": "Animal owner; clinical records; prescribing role",
+        "controls": "Restricted owner/animal files; booking and emergency contacts",
+        "review": "Veterinary licensing or medicine"
+      },
+      {
+        "id": "professional-services",
+        "activation": "Consulting, accounting, photography or design",
+        "investigate": "Engagement scope; client confidentiality; IP rights",
+        "controls": "Deliverable approval; secure client files; billing clarity",
+        "review": "Regulated professional advice"
+      },
+      {
+        "id": "events",
+        "activation": "Ticketing, conferences or gatherings",
+        "investigate": "Organizer; venue; admission; cancellation",
+        "controls": "Ticket price and fees; accessible entry; refund process",
+        "review": "Safety, minors or resale restrictions"
+      },
+      {
+        "id": "telecommunications",
+        "activation": "Internet, telephony or communication services",
+        "investigate": "Subscriber identity; traffic data; service terms",
+        "controls": "Restricted traffic metadata; outages and support",
+        "review": "Telecom licensing or lawful access"
+      },
+      {
+        "id": "nonprofit",
+        "activation": "Charity, foundation or donations",
+        "investigate": "Beneficiary data; donation use; fundraising claims",
+        "controls": "Donor choices; receipts; safeguard beneficiary identity",
+        "review": "Fundraising regulation or vulnerable people"
+      },
+      {
+        "id": "government",
+        "activation": "Public authority or citizen portal",
+        "investigate": "Statutory mandate; public records; accessibility",
+        "controls": "Role segregation; accessible forms; audit trail",
+        "review": "Public-sector mandate or official decisions"
+      },
+      {
+        "id": "energy-environment",
+        "activation": "Energy, utilities or environmental services",
+        "investigate": "Meter data; environmental claims; permits",
+        "controls": "Limit meter access; accurate claims; incident response",
+        "review": "Utility regulation or environmental reporting"
+      },
+      {
+        "id": "research",
+        "activation": "Scientific research or laboratory services",
+        "investigate": "Study protocol; participants; ethics review; data reuse",
+        "controls": "Pseudonymization; restricted dataset access; withdrawal handling",
+        "review": "Human-subject research or sensitive data"
+      },
+      {
+        "id": "crypto-blockchain",
+        "activation": "Wallets, exchanges or digital assets",
+        "investigate": "Custody; transaction irreversibility; regulated activities",
+        "controls": "Key custody; fee/risk clarity; avoid personal data on-chain",
+        "review": "Financial licensing, AML or investment claims"
+      },
+      {
+        "id": "gambling",
+        "activation": "Betting, casino or chance-based services",
+        "investigate": "Age; location; game mechanics; operator license",
+        "controls": "Eligibility gating; self-exclusion; transparent odds",
+        "review": "Always specialist review before launch"
+      },
+      {
+        "id": "adult-content",
+        "activation": "Age-restricted adult content or services",
+        "investigate": "Age assurance; participant consent; distribution rights",
+        "controls": "Age gating; reporting/removal; restrict sensitive data",
+        "review": "Always specialist review before launch"
+      },
+      {
+        "id": "physical-security",
+        "activation": "Security guards, alarms or surveillance",
+        "investigate": "Monitoring scope; subject notice; footage access",
+        "controls": "Restricted footage; retention; event logging",
+        "review": "Surveillance, biometrics or security licensing"
+      },
+      {
+        "id": "news-media",
+        "activation": "Journalism, publishing or news services",
+        "investigate": "Editorial responsibility; sources; corrections; rights",
+        "controls": "Correction process; source protection; ad labeling",
+        "review": "Defamation, source protection or copyright"
+      },
+      {
+        "id": "funeral-services",
+        "activation": "Funeral, cemetery or memorial services",
+        "investigate": "Contracting party; deceased/living data; pricing",
+        "controls": "Respectful contact settings; restrict memorial visibility; clear pricing",
+        "review": "Local funeral regulation or vulnerable consumers"
+      },
+      {
+        "id": "home-services",
+        "activation": "Cleaning, plumbing or domestic repairs",
+        "investigate": "Contractor role; home address; quotes and access",
+        "controls": "Address minimization; change orders; complaint handling",
+        "review": "Trade licensing or home safety"
+      },
+      {
+        "id": "fashion",
+        "activation": "Fashion, textile or design commerce",
+        "investigate": "Product materials; sizing; sourcing; brand rights",
+        "controls": "Accurate product claims; returns; image permissions",
+        "review": "Labeling, IP or sustainability claims"
+      }
+    ],
+    "models": [
+      {
+        "id": "marketplace",
+        "activation": "Multiple independent sellers or service providers",
+        "investigate": "Platform vs seller roles; fees; complaints",
+        "controls": "Seller disclosure; dispute routing; payout controls",
+        "review": "Intermediary liability or regulated sellers"
+      },
+      {
+        "id": "multitenant",
+        "activation": "Shared infrastructure for distinct organizations",
+        "investigate": "Tenant roles; admin access; shared services",
+        "controls": "Tenant isolation tests; export/deletion per tenant",
+        "review": "Cross-tenant data or shared controllers"
+      },
+      {
+        "id": "saas",
+        "activation": "Hosted application sold as a service",
+        "investigate": "Service scope; availability; data ownership; exit",
+        "controls": "SLA evidence; export; account closure",
+        "review": "Regulated client workloads"
+      },
+      {
+        "id": "paas",
+        "activation": "Managed application execution platform",
+        "investigate": "Shared responsibility; deployment data; subprocessors",
+        "controls": "Workload isolation; logs; deletion",
+        "review": "Regulated hosting"
+      },
+      {
+        "id": "iaas",
+        "activation": "Compute, network or storage infrastructure",
+        "investigate": "Customer/provider duties; locations; admin access",
+        "controls": "Isolation; incident response; secure disposal",
+        "review": "Critical or regulated infrastructure"
+      },
+      {
+        "id": "b2b",
+        "activation": "Business-to-business contracting",
+        "investigate": "Authorized representatives; negotiated terms; roles",
+        "controls": "Contract version; access permissions; invoicing",
+        "review": "Processor/controller allocation"
+      },
+      {
+        "id": "b2c",
+        "activation": "Business-to-consumer contracting",
+        "investigate": "Consumer identity; pricing; contract acceptance",
+        "controls": "Precontract disclosures; complaint and cancellation flows",
+        "review": "Mandatory consumer rights"
+      },
+      {
+        "id": "c2c",
+        "activation": "Transactions between private individuals",
+        "investigate": "Platform role; trader status; disputes",
+        "controls": "Seller identity visibility as appropriate; report fraud",
+        "review": "Misclassification or platform liability"
+      },
+      {
+        "id": "b2g",
+        "activation": "Contracting with public bodies",
+        "investigate": "Procurement rules; data ownership; security requirements",
+        "controls": "Contract-controlled access; audit export",
+        "review": "Public procurement and sovereignty"
+      },
+      {
+        "id": "subscriptions",
+        "activation": "Recurring paid access",
+        "investigate": "Billing frequency; trial; renewal; cancellation",
+        "controls": "Clear recurring price; cancellation tests",
+        "review": "Consumer renewal or cancellation rules"
+      },
+      {
+        "id": "freemium",
+        "activation": "Free tier with paid upgrades",
+        "investigate": "Feature limits; upgrade prompts; data use",
+        "controls": "Price clarity; non-deceptive upgrade UX",
+        "review": "Children or manipulative monetization"
+      },
+      {
+        "id": "crowdfunding",
+        "activation": "Campaign-based collection of contributions",
+        "investigate": "Donation vs reward vs equity; funds flow",
+        "controls": "Campaign risks; refund triggers; payout transparency",
+        "review": "Securities or fundraising rules"
+      },
+      {
+        "id": "affiliate-marketing",
+        "activation": "Referral commissions or attributed sales",
+        "investigate": "Commission relationship; tracking; partners",
+        "controls": "Disclosure; tracking preferences; link controls",
+        "review": "Endorsements or sensitive targeting"
+      },
+      {
+        "id": "open-source",
+        "activation": "Software distributed under open licenses",
+        "investigate": "License obligations; contributor rights; dependencies",
+        "controls": "Notices; source offers where required; SBOM",
+        "review": "Copyleft conflicts or patent restrictions"
+      },
+      {
+        "id": "proprietary-software",
+        "activation": "Closed-source software distribution",
+        "investigate": "License scope; ownership; third-party components",
+        "controls": "EULA versioning; dependency notices; support scope",
+        "review": "Unclear IP or restrictive clauses"
+      },
+      {
+        "id": "local-first",
+        "activation": "Local/offline primary data storage",
+        "investigate": "Sync options; telemetry; backups; keys",
+        "controls": "Test offline paths; export; accurate encryption claims",
+        "review": "Cloud sync or key loss"
+      },
+      {
+        "id": "decentralized",
+        "activation": "Distributed or peer-to-peer services",
+        "investigate": "Node roles; permanence; governance",
+        "controls": "Avoid immutable personal data; explain deletion limits",
+        "review": "Unclear controllers or financial tokens"
+      },
+      {
+        "id": "on-demand",
+        "activation": "Immediate dispatch or service requests",
+        "investigate": "Provider status; time/price estimate; location",
+        "controls": "Clear cancellation; tracking access; complaints",
+        "review": "Worker classification or safety"
+      },
+      {
+        "id": "franchise",
+        "activation": "Multiple operators under common brand",
+        "investigate": "Franchisor/franchisee roles; lead routing",
+        "controls": "Operator disclosure; data segregation; contract scope",
+        "review": "Franchise law or joint responsibility"
+      },
+      {
+        "id": "api-services",
+        "activation": "Programmatic service access",
+        "investigate": "API data scope; quotas; downstream use",
+        "controls": "Key rotation; rate limits; deletion propagation",
+        "review": "Sensitive data sharing"
+      },
+      {
+        "id": "corporate-portal",
+        "activation": "Internal or external enterprise portal",
+        "investigate": "Employee/client audience; access and records",
+        "controls": "Role separation; access review; retention",
+        "review": "Employment monitoring or confidential files"
+      },
+      {
+        "id": "collaboration",
+        "activation": "Shared workspaces and documents",
+        "investigate": "Workspace ownership; guests; sharing defaults",
+        "controls": "Granular access; revocation; export",
+        "review": "Shared sensitive documents"
+      },
+      {
+        "id": "white-label",
+        "activation": "Rebranded service operated for clients",
+        "investigate": "Brand vs actual operator; responsibility",
+        "controls": "Correct operator notices; tenant-specific configuration",
+        "review": "Misleading identity or processor roles"
+      },
+      {
+        "id": "software-licensing",
+        "activation": "Licenses, seats or usage entitlements",
+        "investigate": "License grant; device/seat checks; renewals",
+        "controls": "Transparent enforcement; license transfer and activation",
+        "review": "Restrictive terms or license audit privacy"
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "artificial-intelligence",
+        "activation": "AI inference, generation or training",
+        "investigate": "Provider; inputs/outputs; training reuse; human oversight",
+        "controls": "Limit prompts/logs; disclose limitations; review consequential use",
+        "review": "High-risk AI or sensitive inputs"
+      },
+      {
+        "id": "automation",
+        "activation": "Automated workflow or decisions",
+        "investigate": "Decision impact; input data; override",
+        "controls": "Human escalation; audit reason; test errors",
+        "review": "Consequential automated decisions"
+      },
+      {
+        "id": "biometrics",
+        "activation": "Biometric capture, templates or matching",
+        "investigate": "Purpose; alternatives; necessity; retention",
+        "controls": "Restrict templates; delete; test non-biometric option",
+        "review": "Biometric identity or surveillance"
+      },
+      {
+        "id": "geolocation",
+        "activation": "Device or inferred location",
+        "investigate": "Precision; background access; recipients",
+        "controls": "Least precision; permission controls; stop tracking",
+        "review": "Continuous or worker/child tracking"
+      },
+      {
+        "id": "minors",
+        "activation": "Children or adolescent users",
+        "investigate": "Age range; guardian role; profiling",
+        "controls": "Age-appropriate UX; applicable consent and safety controls",
+        "review": "Children's data or monetization"
+      },
+      {
+        "id": "sensitive-data",
+        "activation": "Health, biometric or other sensitive categories",
+        "investigate": "Category; necessity; legal basis; access",
+        "controls": "Minimization; restricted access; retention controls",
+        "review": "Sensitive data processing"
+      },
+      {
+        "id": "cookies-trackers",
+        "activation": "Cookies, local storage or tracking SDKs",
+        "investigate": "Purpose; provider; duration; consent requirements",
+        "controls": "Network tests; reject/withdraw; optional gating",
+        "review": "Unclear tracker purposes"
+      },
+      {
+        "id": "payments",
+        "activation": "Payment or checkout flow",
+        "investigate": "Processor; card data scope; currency; fees",
+        "controls": "Avoid unnecessary card storage; verify callbacks; receipts",
+        "review": "Handling payment credentials"
+      },
+      {
+        "id": "recurring-billing",
+        "activation": "Recurring charges or trials",
+        "investigate": "Renewal; reminders; cancellation; proration",
+        "controls": "Test cancel and billing consent; receipt",
+        "review": "Disputed recurring charges"
+      },
+      {
+        "id": "refunds",
+        "activation": "Refunds, returns or guarantees",
+        "investigate": "Eligibility; windows; exceptions; processor",
+        "controls": "Accessible request path; track decisions; avoid unlawful exclusions",
+        "review": "Mandatory rights conflicts"
+      },
+      {
+        "id": "intellectual-property",
+        "activation": "Content, software or brand assets",
+        "investigate": "Ownership; licenses; permitted uses",
+        "controls": "License inventory; attribution; takedown routing",
+        "review": "Unclear rights or infringement"
+      },
+      {
+        "id": "user-generated-content",
+        "activation": "User uploads, comments or posts",
+        "investigate": "Rights grant; visibility; prohibited content",
+        "controls": "Report/delete; visibility controls; rights notice",
+        "review": "Illegal content or children"
+      },
+      {
+        "id": "moderation",
+        "activation": "Content or account moderation",
+        "investigate": "Rules; decision authority; appeals",
+        "controls": "Report queue; notice; appeal records",
+        "review": "High-impact or statutory moderation duties"
+      },
+      {
+        "id": "electronic-marketing",
+        "activation": "Email, SMS, push or messaging campaigns",
+        "investigate": "Purpose; consent basis; lists; providers",
+        "controls": "Opt-out; suppression lists; distinguish transactional",
+        "review": "Unsolicited or sensitive targeting"
+      },
+      {
+        "id": "accessibility",
+        "activation": "User interfaces or digital documents",
+        "investigate": "Audience; applicable standards; barriers",
+        "controls": "Keyboard, screen reader, contrast and error tests",
+        "review": "Public or regulated accessibility"
+      },
+      {
+        "id": "international-transfers",
+        "activation": "Data crossing jurisdictions",
+        "investigate": "Locations; recipient roles; transfer mechanism",
+        "controls": "Data map; contract checks; transfer review",
+        "review": "Unclear transfer legality"
+      },
+      {
+        "id": "third-party-services",
+        "activation": "External API, SDK or vendor",
+        "investigate": "Purpose; data sent; contract; subprocessors",
+        "controls": "Vendor inventory; scoped tokens; deletion verification",
+        "review": "Unverified sensitive-data vendor"
+      },
+      {
+        "id": "security",
+        "activation": "Systems processing or protecting data",
+        "investigate": "Threat model; access; logging; security claims",
+        "controls": "Least privilege; secret handling; vulnerability process",
+        "review": "Critical systems or unsupported security claims"
+      },
+      {
+        "id": "retention",
+        "activation": "Storage, backups or deletion lifecycle",
+        "investigate": "Purpose; retention schedule; legal holds",
+        "controls": "Test expiry; backup lifecycle; documented exceptions",
+        "review": "Conflicting retention duties"
+      },
+      {
+        "id": "portability",
+        "activation": "Export or migration of user data",
+        "investigate": "Eligible data; format; identity verification",
+        "controls": "Machine-readable export; scoped access; transfer tests",
+        "review": "Third-party data disclosure"
+      },
+      {
+        "id": "consent-management",
+        "activation": "Consent or preference capture",
+        "investigate": "Purpose; basis; version; revocation",
+        "controls": "Record minimal evidence; withdrawal propagation",
+        "review": "Invalid or bundled consent"
+      },
+      {
+        "id": "monitoring",
+        "activation": "Surveillance, employee monitoring or analytics",
+        "investigate": "Subjects; scope; notice; necessity",
+        "controls": "Access logs; restrict footage and monitoring",
+        "review": "Worker or covert surveillance"
+      },
+      {
+        "id": "authentication",
+        "activation": "Accounts, OAuth, MFA or recovery",
+        "investigate": "Identity assurance; provider; recovery data",
+        "controls": "Session revocation; secure reset; MFA; account deletion",
+        "review": "High-assurance identity"
+      },
+      {
+        "id": "cloud-storage",
+        "activation": "Remote storage or hosted backup",
+        "investigate": "Provider; region; access; encryption",
+        "controls": "Access policies; backup deletion; restore tests",
+        "review": "Sensitive or regulated hosting"
+      },
+      {
+        "id": "device-sync",
+        "activation": "Cross-device data replication",
+        "investigate": "Recipients; pairing; conflict; retention",
+        "controls": "Authenticated pairing; revoke device; delete propagation",
+        "review": "Sensitive synchronization"
+      },
+      {
+        "id": "encryption",
+        "activation": "Encryption at rest or in transit",
+        "investigate": "Threat model; key custody; scope; recovery",
+        "controls": "Verify algorithms/configuration; rotation; truthful claims",
+        "review": "Key escrow or regulated cryptography"
+      },
+      {
+        "id": "ocr-documents",
+        "activation": "Document capture or OCR",
+        "investigate": "Document type; provider; extraction; retention",
+        "controls": "Redact samples; limit uploads; delete originals as appropriate",
+        "review": "Identity or clinical records"
+      },
+      {
+        "id": "profiling",
+        "activation": "Personalization, scoring or behavioral inference",
+        "investigate": "Purpose; attributes; impact; transparency",
+        "controls": "Opt-out where applicable; fairness and human review",
+        "review": "Consequential or sensitive profiles"
+      },
+      {
+        "id": "electronic-contracts",
+        "activation": "Online acceptance or signature",
+        "investigate": "Contract parties; version; assent; signature level",
+        "controls": "Record minimal acceptance evidence; reproducible terms",
+        "review": "Formal signature requirements"
+      },
+      {
+        "id": "microtransactions",
+        "activation": "Virtual currency or in-app purchases",
+        "investigate": "Price; conversion; refunds; age; random rewards",
+        "controls": "Real price clarity; spending controls; receipt",
+        "review": "Minors or gambling-like mechanics"
+      },
+      {
+        "id": "incident-notification",
+        "activation": "Security breach detection and response",
+        "investigate": "Roles; affected data; reporting timelines",
+        "controls": "Escalation drill; evidence preservation; notification plan",
+        "review": "Breach legal assessment"
+      },
+      {
+        "id": "dark-patterns",
+        "activation": "UX influencing choice or cancellation",
+        "investigate": "Choice parity; defaults; urgency claims",
+        "controls": "Test rejection and cancellation; remove deceptive UI",
+        "review": "Manipulative consumer or consent design"
+      },
+      {
+        "id": "iot-hardware",
+        "activation": "Sensors, connected devices or telemetry",
+        "investigate": "Device owner; data flows; updates; permissions",
+        "controls": "Secure pairing; update support; data controls",
+        "review": "Safety-critical devices or surveillance"
+      },
+      {
+        "id": "audiovisual-recording",
+        "activation": "Voice, video or communication recording",
+        "investigate": "Participants; notice; purpose; retention",
+        "controls": "Recording indication; restricted access; deletion",
+        "review": "Covert recording or biometrics"
+      },
+      {
+        "id": "personalized-advertising",
+        "activation": "Behavioral or targeted advertising",
+        "investigate": "Ad partners; data categories; profiling; audience",
+        "controls": "Test preferences; limit sensitive targeting; provider controls",
+        "review": "Children, sensitive data or cross-site tracking"
+      }
+    ]
+  }
+}

@@ -1,5 +1,13 @@
 # Release notes
 
+## 1.1.0 — modular audit framework (development)
+
+- 99 investigation modules: 40 sectors, 24 business models, 35 capabilities.
+- Added deterministic offline module planner, catalog and tests; integrated into the eight-stage skill workflow.
+- Retains Apache-2.0 and existing approval, evidence and publication boundaries.
+- Catalog entries are research prompts, not a jurisdiction-specific legal rule database. Live agent validation and legal review remain pending.
+
+
 ## 1.0.1 — license changed to Apache-2.0
 
 - The current source release is licensed under **Apache License, Version 2.0**; the exact license text is in the repository-root `LICENSE` file.
