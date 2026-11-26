@@ -7,7 +7,9 @@ import os
 from pathlib import Path
 import re
 import stat
+import sys
 
+sys.dont_write_bytecode = True
 from ulp import SKIP_DIRS, SKIP_NAME, PATTERNS, MAX_BYTES
 
 # Only source code is read; manifests are identified by name without reading contents.
