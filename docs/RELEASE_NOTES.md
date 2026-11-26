@@ -1,5 +1,13 @@
 # Release notes
 
+## 1.2.0 — universal project audit (development)
+
+- Adds platform-specific audit workflow and a synthetic credential-vault scenario.
+- Adds bounded read-only project triage, candidate platform/capability signals, omission reporting and regression tests.
+- Retains all 99 modules and existing evidence, approval and publication gates.
+- Platform heuristics are not proof of real data flows; runtime and official legal research remain necessary. Live agent acceptance pending.
+
+
 ## 1.1.0 — modular audit framework (development)
 
 - 99 investigation modules: 40 sectors, 24 business models, 35 capabilities.
