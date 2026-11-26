@@ -4,7 +4,7 @@
 
 **Español:** Analiza un proyecto real, descubre posibles tratamientos de datos, investiga las obligaciones aplicables en **fuentes oficiales**, pregunta por información empresarial faltante y prepara documentos y cambios de privacidad para revisión y autorización humana. No inventa hechos, no ofrece una certificación legal y no publica automáticamente.
 
-> **Status:** v1.1.0 — modular audit framework and local safety utilities. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
+> **Status:** v1.2.0 — universal project audit and modular framework. Agent-runtime integrations need validation in the user's installed Antigravity/Claude/Codex environments. A green local test suite does **not** mean legal compliance.
 >
 > **License:** [Apache License 2.0](LICENSE). Copyright © 2026 LastRq. You may use, modify and redistribute this skill, including commercially, subject to the license terms. See [COPYRIGHT.md](COPYRIGHT.md).
 
@@ -17,6 +17,16 @@
 - Consent rules: no chatbot; assess whether a banner is needed, block optional technologies before permission where required, test withdrawal/rejection and accessibility.
 - Read-only by default; non-public workfiles can be preauthorized, but code changes, publishing and Git actions always require separate approval.
 - No external dependencies for the bundled Python 3.10+ CLI.
+
+## Universal project audit
+
+Audit an existing project regardless of its niche or platform: desktop, mobile, web, games, APIs, libraries, CLI, AI, IoT, infrastructure and monorepos. Platform-specific guidance is in [Universal project audit](references/workflows/universal-project-audit.md); a synthetic [credential vault example](references/workflows/credential-vault-example.md) covers local storage, encryption, key custody, sync, recovery and disclosure review.
+
+```bash
+python -B scripts/project_audit.py --project /path/to/project
+```
+
+The helper identifies candidate platforms and source signals and suggests candidate capability IDs. It excludes private/runtime data paths heuristically, reports omissions, and emits only metadata to stdout. It is not a complete secret detector, security scanner, runtime analyzer or legal classifier. The agent must validate actual code paths and distribution variants, research official law and request approvals before drafting/integration. No cookie banner is presumed necessary on native/offline software.
 
 ## Modular audit framework
 
