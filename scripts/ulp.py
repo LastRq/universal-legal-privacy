@@ -19,7 +19,7 @@ import tempfile
 import uuid
 
 NAME = "universal-legal-privacy"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 512_000
 MAX_RESULTS = 3000
@@ -484,7 +484,9 @@ def command_verify(args):
             failures.append("Missing required Agent Skills frontmatter")
     required = ["LICENSE", "COPYRIGHT.md", "references/workflows/permissions.md", "references/legal-research/source-policy.md",
                 "references/consent/implementation.md", "scripts/ulp.py",
-                "references/modular/catalog.json", "references/modular/workflow.md", "scripts/module_plan.py"]
+                "references/modular/catalog.json", "references/modular/workflow.md", "scripts/module_plan.py",
+                "references/workflows/universal-project-audit.md", "references/workflows/credential-vault-example.md",
+                "scripts/project_audit.py"]
     for p in required:
         if not (root / p).is_file():
             failures.append(f"Missing required resource: {p}")
